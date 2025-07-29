@@ -8,7 +8,7 @@
   "license": "MIT",
   "environment": "server",
   "entrypoints": {
-    "main": ["com.example.sleep.SingleSleepMod"]
+    "main": ["com.sleep.SingleSleepMod"]
   },
   "mixins": [],
   "depends": {
