@@ -1,4 +1,4 @@
-package com.example.sleep;
+package com.sleep;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
