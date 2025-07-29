@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "single-sleep",
+  "version": "1.0.0",
+  "name": "Single Player Sleep",
+  "description": "Allows one player to sleep through the night",
+  "authors": ["Tase"],
+  "license": "MIT",
+  "environment": "server",
+  "entrypoints": {
+    "main": ["com.example.sleep.SingleSleepMod"]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21.8"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": ["library"]
+    }
+  }
+}
