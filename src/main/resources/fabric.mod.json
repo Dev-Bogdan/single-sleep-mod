@@ -1,24 +1,34 @@
 {
-  "schemaVersion": 1,
-  "id": "single-sleep",
-  "version": "1.0.0",
-  "name": "Single Player Sleep",
-  "description": "Allows one player to sleep through the night",
-  "authors": ["Tase"],
-  "license": "MIT",
-  "environment": "server",
-  "entrypoints": {
-    "main": ["com.sleep.SingleSleepMod"]
-  },
-  "mixins": [],
-  "depends": {
-    "fabricloader": ">=0.15.0",
-    "fabric-api": "*",
-    "minecraft": "~1.21.8"
-  },
-  "custom": {
-    "modmenu": {
-      "badges": ["library"]
-    }
-  }
+	"schemaVersion": 1,
+	"id": "single-sleep-mod",
+	"version": "${version}",
+	"name": "single-sleep-mod",
+	"description": "Allows one player to sleep through the night on a server",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://github.com/Dev-Bogdan/single-sleep-mod",
+		"sources": "https://github.com/Dev-Bogdan/single-sleep-mod/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/single-sleep-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.sleep.SingleSleepMod"
+		]
+	},
+	"mixins": [
+		"single-sleep-mod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }
