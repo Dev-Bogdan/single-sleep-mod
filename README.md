@@ -12,7 +12,6 @@ A lightweight Fabric mod that allows one player's sleep to skip the night in mul
 - **Single Player Sleep** - Only one player needs to sleep
 - **Thunderstorm Support** - Skips thunderstorms
 - **Server-Side Only** - No client installation required
-- **Custom Notifications** - Personalize sleep announcements
 
 ## 📥 Installation
 
