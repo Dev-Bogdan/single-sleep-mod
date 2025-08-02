@@ -9,6 +9,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,27 +27,30 @@ public class SingleSleepMod implements ModInitializer {
             BlockState state = world.getBlockState(pos);
             
             if (state.getBlock() instanceof BedBlock) {
-                handleSleepEvent((ServerPlayerEntity) player, (ServerWorld) world);
-                return ActionResult.SUCCESS;
+                return handleSleepEvent((ServerPlayerEntity) player, (ServerWorld) world);
             }
             return ActionResult.PASS;
         });
     }
 
-    private void handleSleepEvent(ServerPlayerEntity player, ServerWorld world) {
-        long time = world.getTimeOfDay() % 24000;
-        if (time >= NIGHT_START && time < NIGHT_END) {
-            long timeToSkip = NIGHT_END - time;
-            world.setTimeOfDay(world.getTimeOfDay() + timeToSkip);
-            
-            world.getPlayers().forEach(p -> {
-                if (p.isSleeping()) p.wakeUp();
-                p.sendMessage(Text.literal(
-                    player.getName().getString() + " slept through the night!"
-                ), false);
-            });
-            
-            world.setWeather(0, 0, false, false);
+    private ActionResult handleSleepEvent(ServerPlayerEntity player, ServerWorld world) {
+        if (world.getRegistryKey() == World.OVERWORLD) {
+            long time = world.getTimeOfDay() % 24000;
+            if (time >= NIGHT_START && time < NIGHT_END) {
+                long timeToSkip = NIGHT_END - time;
+                world.setTimeOfDay(world.getTimeOfDay() + timeToSkip);
+                
+                world.getPlayers().forEach(p -> {
+                    if (p.isSleeping()) p.wakeUp();
+                    p.sendMessage(Text.literal(
+                        player.getName().getString() + " slept through the night!"
+                    ), false);
+                });
+                
+                world.setWeather(0, 0, false, false);
+                return ActionResult.SUCCESS;
+            }
         }
+        return ActionResult.PASS; 
     }
 }
