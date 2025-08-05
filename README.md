@@ -1,6 +1,6 @@
 # Single Sleep Mod for Minecraft [Fabric] (under review)
 
-[![Modrinth](https://img.shields.io/modrinth/v/single-sleep?label=Modrinth&style=for-the-badge)](https://modrinth.com/mod/single-sleep-mod)
+[![Modrinth](https://img.shields.io/modrinth/v/single-sleep-mod?label=Modrinth&style=for-the-badge)](https://modrinth.com/mod/single-sleep-mod)
 [![CurseForge](https://cf.way2muchnoise.eu/versions/1316505.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/instant-morning)
 [![GitHub](https://img.shields.io/github/license/Dev-Bogdan/single-sleep-mod?style=for-the-badge)](LICENSE)
 
